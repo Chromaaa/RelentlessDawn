@@ -831,7 +831,7 @@ SandboxVars = {
         -- 4 = Random
         Speed = 3,
         -- If Random Speed is enabled, this controls what percentage of zombies are Sprinters. Check the "Advanced" box below to use a custom percentage. Min: 0 Max: 100 Default: 0
-        SprinterPercentage = 0,
+        SprinterPercentage = 1,
         -- The damage zombies inflict per attack. Default = Normal
         -- 1 = Superhuman
         -- 2 = Normal
@@ -1069,15 +1069,15 @@ SandboxVars = {
     },
     SkillRecoveryJournal = {
         -- Min: 1 Max: 100 Default: 100
-        RecoveryPercentage = 60,
+        RecoveryPercentage = 80,
         -- Min: 0.00 Max: 1000.00 Default: 1.00
-        TranscribeSpeed = 15.0,
+        TranscribeSpeed = 20.0,
         -- Min: 0.00 Max: 1000.00 Default: 1.00
-        ReadTimeSpeed = 15.0,
+        ReadTimeSpeed = 20.0,
         RecoverProfessionAndTraitsBonuses = false,
         TranscribeTVXP = true,
         -- Min: -1 Max: 100 Default: 0
-        RecoverPassiveSkills = 60,
+        RecoverPassiveSkills = 80,
         -- Min: -1 Max: 100 Default: -1
         RecoverPhysicalCategorySkills = -1,
         -- Min: -1 Max: 100 Default: -1
@@ -1259,7 +1259,7 @@ SandboxVars = {
     },
     TOC = {
         -- Min: 1 Max: 10 Default: 1
-        CicatrizationSpeed = 1,
+        CicatrizationSpeed = 5,
         -- Min: 0 Max: 5 Default: 1
         WoundDirtynessMultiplier = 1,
         -- Min: 1 Max: 3 Default: 2
@@ -1278,13 +1278,13 @@ SandboxVars = {
         AllowFuel = true,
         AllowHazardous = true,
         AllowWater = true,
-        AllowAlcoholic = false,
-        AllowBeverage = false,
+        AllowAlcoholic = true,
+        AllowBeverage = true,
         AllowMedical = false,
         AllowColors = false,
         AllowDyes = false,
         AllowHairDyes = false,
-        AllowPaint = false,
+        AllowPaint = true,
         AllowPoisons = false,
         EnableGeneratorRefuel = true,
         GeneratorRefuelRequiresHose = true,
@@ -1350,11 +1350,11 @@ SandboxVars = {
         KeepBags = false,
         FailChance = 4,
         -- Min: 0.10 Max: 5.00 Default: 1.00
-        YogaXPMultiplier = 1.0,
+        YogaXPMultiplier = 2.0,
         -- Min: 0.10 Max: 5.00 Default: 1.00
-        FitnessXPMultiplier = 1.0,
+        FitnessXPMultiplier = 2.0,
         -- Min: 0.10 Max: 5.00 Default: 1.00
-        NimbleXPMultiplier = 1.0,
+        NimbleXPMultiplier = 2.0,
     },
     LSHygiene = {
         -- Min: 0.00 Max: 3.00 Default: 1.00
@@ -1376,7 +1376,7 @@ SandboxVars = {
         BeautyNeedDecayRate = 3,
         BeautyNeedStrength = 3,
         -- Min: 0.10 Max: 4.00 Default: 1.00
-        ArtworkBeautyMultiplier = 1.0,
+        ArtworkBeautyMultiplier = 2.0,
     },
     LS = {
         DynamicTraits = false,
@@ -1549,9 +1549,9 @@ SandboxVars = {
     JeevesDrops = {
         AutoDrops = true,
         -- Min: 1 Max: 90 Default: 2
-        FrequencyDayMin = 1,
+        FrequencyDayMin = 3,
         -- Min: 1 Max: 90 Default: 5
-        FrequencyDayMax = 3,
+        FrequencyDayMax = 6,
         -- Min: 20 Max: 90 Default: 50
         DropRadiusMin = 50,
         -- Min: 30 Max: 90 Default: 60
@@ -1754,8 +1754,8 @@ SandboxVars = {
     KnoxAntidote = {
         AntidoteRarity = 3,
         AdminSpawnOnly = false,
-        SideEffectFatigue = false,
-        SideEffectNausea = false,
+        SideEffectFatigue = true,
+        SideEffectNausea = true,
         SideEffectDrunk = false,
         -- Min: 0 Max: 10 Default: 0
         RequiredFirstAidLevel = 0,
@@ -1856,7 +1856,7 @@ SandboxVars = {
         -- Min: 5 Max: 80 Default: 25
         IncapacitatedHealth = 25,
         -- Min: 0 Max: 240 Default: 6
-        IncapacitatedTime = 6,
+        IncapacitatedTime = 3,
         -- Min: 0 Max: 600 Default: 0
         IncapacitatedTimeVariance = 0,
         ShowExactCountdown = true,
@@ -1865,7 +1865,7 @@ SandboxVars = {
         UnassistedRecovery = false,
         RecoveryRequiresPassive = false,
         -- Min: 5 Max: 100 Default: 50
-        RecoveryHealth = 50,
+        RecoveryHealth = 30,
         RecoveryRemovesInjuries = false,
         -- Min: 0 Max: 100 Default: 30
         PassiveSkillLoss = 0,
@@ -1885,9 +1885,9 @@ SandboxVars = {
         AllowFaction = true,
         AllowSafehouse = true,
         -- Min: 1 Max: 999 Default: 5
-        MaxVehicle = 5,
+        MaxVehicle = 10,
         RequireTicket = true,
-        ReturnTicket = false,
+        ReturnTicket = true,
         ServerSideChecking = false,
         -- Min: 1 Max: 999 Default: 240
         ClaimTimeout = 240,
