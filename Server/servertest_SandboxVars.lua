@@ -1619,9 +1619,9 @@ SandboxVars = {
         -- Min: 1 Max: 365 Default: 14
         SE_StartDay = 14,
         -- Min: 1 Max: 90 Default: 7
-        SE_FrequencyDayMin = 7,
+        SE_FrequencyDayMin = 3,
         -- Min: 1 Max: 90 Default: 14
-        SE_FrequencyDayMax = 14,
+        SE_FrequencyDayMax = 6,
         -- Min: 1 Max: 168 Default: 24
         SE_DespawnHours = 24,
         -- Min: 1 Max: 10 Default: 2
@@ -1631,17 +1631,17 @@ SandboxVars = {
         -- Min: 10 Max: 90 Default: 30
         SE_ZombieRadiusMin = 10,
         -- Min: 10 Max: 90 Default: 80
-        SE_ZombieRadiusMax = 50,
+        SE_ZombieRadiusMax = 30,
         -- Min: 10 Max: 180 Default: 60
         SE_SpawnDuration = 60,
         -- Min: 10 Max: 180 Default: 60
-        SE_LureDuration = 60,
+        SE_LureDuration = 120,
         -- Min: 50 Max: 500 Default: 300
         SE_LureRadius = 300,
         -- Min: 100 Max: 2000 Default: 1000
         SE_MoodleRange = 2000,
         -- Min: 30 Max: 300 Default: 100
-        SE_AlarmRadius = 80,
+        SE_AlarmRadius = 300,
     },
     JeevesHordes = {
         Enabled = true,
@@ -1652,11 +1652,11 @@ SandboxVars = {
         -- Min: 1 Max: 365 Default: 12
         FrequencyMax = 12,
         -- Min: 1 Max: 5000 Default: 50
-        ZombieCount = 80,
+        ZombieCount = 100,
         -- Min: 0 Max: 500 Default: 10
-        ZombieIncrement = 0,
+        ZombieIncrement = 10,
         -- Min: 1 Max: 5000 Default: 300
-        ZombieCountMax = 60,
+        ZombieCountMax = 200,
         -- Min: 20 Max: 200 Default: 40
         SpawnDistanceMin = 40,
         -- Min: 30 Max: 250 Default: 70
