@@ -21,6 +21,11 @@ Open=true
 # Welcome message
 ServerWelcomeMessage=Welcome to Relentless Dawn B42! <LINE> <LINE> Full PvE Survival Experience <LINE> Active Staff & Frequent Updates <LINE> Join our Discord community for announcements and support. <LINE> Happy surviving!
 
+
+# Maximum number of players that can be on the server at one time. This excludes admins.
+# WARNING: Server player counts above 32 will potentially result in poor map streaming and desync. Please advance with caution. Min: 1 Max: 100 Default: 32
+MaxPlayers=18
+
 SpawnItems=
 
 # Enter the mod loading ID here. It can be found in \Steam\steamapps\workshop\modID\mods\modName\info.txt
