@@ -617,7 +617,7 @@ SandboxVars = {
     -- 4 = Normal
     -- 5 = Slow
     -- 6 = Very Slow
-    AnimalWoolIncModifier = 6,
+    AnimalWoolIncModifier = 4,
     -- The chance of finding animals in farm. Default = Often
     -- 1 = Never
     -- 2 = Extremely Rare
@@ -626,7 +626,7 @@ SandboxVars = {
     -- 5 = Often
     -- 6 = Very Often
     -- 7 = Always
-    AnimalRanchChance = 1,
+    AnimalRanchChance = 5,
     -- The number of hours grass will regrow after being  eaten by an animal or cut by the player. Min: 1 Max: 9999 Default: 240
     AnimalGrassRegrowTime = 240,
     -- If a meta (ie. not actually visible in-game) fox may attack  your chickens if the hutch's door is left open at night.
@@ -1175,6 +1175,7 @@ SandboxVars = {
         Enable_ASVAL = true,
         Enable_FAMAS = true,
         Enable_CAR15 = true,
+        Enable_AK47 = true,
         Enable_M14 = true,
         Enable_M1_GARAND = true,
         Enable_FAL = true,
@@ -1185,6 +1186,8 @@ SandboxVars = {
         Enable_W1894 = true,
         Enable_M1895 = true,
         Enable_W1887 = true,
+        Enable_W1873 = true,
+        Enable_W1873_CARBINE = true,
         Enable_M60 = true,
         Enable_BAR = true,
         Enable_M92FS = true,
@@ -1895,5 +1898,70 @@ SandboxVars = {
         RebuildDB = false,
         -- Min: 1 Max: 60 Default: 1
         VehicleCoordinateUpdateThrottle = 1,
+    },
+    FunctionalAppliances = {
+        BeerKegsChance = 3,
+        BeerKegsFilledAmount = 3,
+        SyrupsChance = 3,
+        SyrupsFilledAmount = 3,
+        FATheatreChance = 3,
+        FAFreshTheatreChance = 3,
+        FAZombieItemsSpawn = true,
+    },
+    AutomaticRefueling = {
+        -- Min: 1 Max: 100 Default: 10
+        LitersPerMinute = 10,
+        -- Min: 1 Max: 50 Default: 5
+        MaxDistance = 5,
+        RemoveOriginalOptions = true,
+        CanPumpBeDamaged = true,
+        CanPumpBeRepaired = true,
+        -- Min: 1 Max: 60 Default: 5
+        PumpRepairDuration = 5,
+        -- Min: 0 Max: 200 Default: 20
+        PumpSoundRadius = 20,
+    },
+    BetterSafehouse = {
+        EnableSafehouseViewer = true,
+        EnhancedInvites = true,
+        -- Min: 0 Max: 20 Default: 0
+        MaxJoinedSafehouses = 0,
+        SingleRespawnSafehouseEnabled = true,
+        AdminsFreeAddToSafehouse = true,
+        AdminsCanReleaseAnySafehouse = false,
+        CustomClaimEnabled = false,
+        CustomClaimItemCustomSafehouse = false,
+        CustomClaimFreeAnywhere = 1,
+        -- Min: 3 Max: 200 Default: 31
+        CustomSafehouseSize = 31,
+        CustomClaimRestrictLocations = false,
+        -- Min: 0 Max: 200 Default: 10
+        CustomClaimRestrictDistance = 10,
+        PhunZones2NoSafehouseBlock = true,
+        VanillaSafehouseEnabled = true,
+        -- Min: 0 Max: 10000 Default: 0
+        VanillaSafehouseAreaLimit = 0,
+        -- Min: 0 Max: 10000 Default: 0
+        VanillaSafehouseAreaMinimum = 0,
+        -- Min: 0 Max: 43200 Default: 0
+        VanillaSafehouseClaimCooldownMinutes = 0,
+        ExpansionEnabled = true,
+        ExpansionAllowedRoleNames = "\"Apoiador\"",
+        -- Min: 1 Max: 50 Default: 5
+        ExpansionRoleStepTiles = 5,
+        -- Min: 0 Max: 20000 Default: 600
+        ExpansionRoleMaxExtraTilesFromOriginal = 600,
+        ExpansionUserBorderExpansionEnabled = false,
+        -- Min: 0 Max: 200 Default: 1
+        ExpansionUserMaxBorderTilesFromOriginal = 1,
+        ExpansionBlockRoadTiles = false,
+        ExpansionBlockedRoadTileNames = "\"blends_street_01_85",
+    },
+    TVM = {
+        MachineStrength = 2,
+        PlayerDamage = false,
+        RequiresPower = true,
+        -- Min: 0.02 Max: 1000.00 Default: 48.00
+        DrainRate = 48.0,
     },
 }
