@@ -151,6 +151,8 @@ PlayerBumpPlayer=false
 # Controls display of remote players on the in-game map. 1=Hidden 2=Friends 3=Friends and nearby players 4=Everyone Min: 1 Max: 4 Default: 1
 MapRemotePlayerVisibility=4
 
+UsePhysicsHitReaction=true
+
 BackupsCount=5
 BackupsOnStart=true
 BackupsOnVersionChange=true
