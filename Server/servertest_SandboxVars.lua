@@ -486,7 +486,7 @@ SandboxVars = {
     -- 5 = High
     CarSpawnRate = 4,
     -- General engine loudness to zombies. Min: 0.00 Max: 100.00 Default: 1.00
-    ZombieAttractionMultiplier = 1.0,
+    ZombieAttractionMultiplier = 2.0,
     -- Whether found vehicles are locked, need keys to start etc.
     VehicleEasyUse = false,
     -- How full the gas tank of discovered vehicles will be. Default = Low
@@ -514,7 +514,7 @@ SandboxVars = {
     -- 6 = Very Often
     LockedCar = 4,
     -- How gas-hungry vehicles are. Min: 0.00 Max: 100.00 Default: 1.00
-    CarGasConsumption = 0.5,
+    CarGasConsumption = 5.0,
     -- General condition discovered vehicles will be in. Default = Normal
     -- 1 = Very Low
     -- 2 = Low
@@ -730,7 +730,7 @@ SandboxVars = {
     -- Functions as a multiplier when applying muscle strain from swinging weapons or carrying heavy loads. Min: 0.00 Max: 10.00 Default: 0.70
     MuscleStrainFactor = 0.0,
     -- Functions as a multiplier when applying discomfort from worn items. Min: 0.00 Max: 10.00 Default: 0.80
-    DiscomfortFactor = 0.8,
+    DiscomfortFactor = 0.6,
     -- If greater than zero damage can be taken from serious wound infections. Min: 0.00 Max: 10.00 Default: 1.00
     WoundInfectionFactor = 1.0,
     -- If true clothing with randomized tints will not be so dark to be virtually black.
@@ -829,7 +829,7 @@ SandboxVars = {
         -- 2 = Fast Shamblers
         -- 3 = Shamblers
         -- 4 = Random
-        Speed = 3,
+        Speed = 4,
         -- If Random Speed is enabled, this controls what percentage of zombies are Sprinters. Check the "Advanced" box below to use a custom percentage. Min: 0 Max: 100 Default: 0
         SprinterPercentage = 1,
         -- The damage zombies inflict per attack. Default = Normal
@@ -1118,9 +1118,6 @@ SandboxVars = {
         -- Min: 0.00 Max: 1.00 Default: 0.00
         disconnectedMessageColorBlue = 0.0,
     },
-    MGRS = {
-        style = 1,
-    },
     DAMN = {
         AllowPro440Spawns = true,
         AllowMrBusSpawns = true,
@@ -1164,7 +1161,9 @@ SandboxVars = {
     },
     MarzGuns = {
         Enable_Alternative_Ammos = true,
+        Enable_M16A1 = true,
         Enable_M16A2 = true,
+        Enable_M16A2_M203 = true,
         Enable_M16A3 = true,
         Enable_AR15 = true,
         Enable_FNC = true,
@@ -1175,6 +1174,8 @@ SandboxVars = {
         Enable_ASVAL = true,
         Enable_FAMAS = true,
         Enable_CAR15 = true,
+        Enable_XM177 = true,
+        Enable_M4A1 = true,
         Enable_AK47 = true,
         Enable_M14 = true,
         Enable_M1_GARAND = true,
@@ -1192,6 +1193,7 @@ SandboxVars = {
         Enable_BAR = true,
         Enable_M92FS = true,
         Enable_M93R = true,
+        Enable_P226 = true,
         Enable_HIPOWER = true,
         Enable_M1911 = true,
         Enable_USP = true,
@@ -1239,26 +1241,6 @@ SandboxVars = {
     JordanalSpawns = {
         -- Min: 0.00 Max: 100.00 Default: 0.04
         MirrorUnitChance = 0.04,
-    },
-    ImmersiveBlackouts = {
-        DaysReset = false,
-        LightsFlickering = true,
-        FlickerAroundPlayers = false,
-        -- Min: 0 Max: 100 Default: 1
-        WaterPercentOFF = 1,
-        -- Min: 0 Max: 100 Default: 5
-        WaterPercentON = 5,
-        -- Min: 0 Max: 168 Default: 0
-        WaterCooldown = 0,
-        -- Min: 0 Max: 100 Default: 1
-        ElectricityPercentOFF = 1,
-        -- Min: 0 Max: 100 Default: 5
-        ElectricityPercentON = 5,
-        -- Min: 0 Max: 168 Default: 0
-        ElectricityCooldown = 0,
-        -- Min: 1 Max: 2147483647 Default: 7
-        StartDay = 7,
-        IgnoreStartDay = false,
     },
     TOC = {
         -- Min: 1 Max: 10 Default: 1
@@ -1683,57 +1665,6 @@ SandboxVars = {
         -- Min: 1 Max: 100 Default: 10
         FragranceSpawnRate = 10,
     },
-    EPR = {
-        -- Min: 0.25 Max: 4.00 Default: 1.00
-        RepairSpeedMultiplier = 1.0,
-        -- Min: 5 Max: 120 Default: 30
-        AssessmentTimeMinutes = 30,
-        -- Min: 60 Max: 960 Default: 360
-        PartReplacementTimeMinutes = 360,
-        -- Min: 15 Max: 240 Default: 90
-        CalibrationTimeMinutes = 90,
-        -- Min: 1 Max: 30 Default: 5
-        StartupDefenseTimeMinutes = 5,
-        -- Min: 0.50 Max: 2.00 Default: 1.00
-        SkillRequirementMultiplier = 1.0,
-        -- Min: 1 Max: 10 Default: 7
-        MinElectricalSkill = 7,
-        -- Min: 1 Max: 10 Default: 4
-        MinMetalworkSkill = 4,
-        -- Min: 1 Max: 5 Default: 2
-        FieldComponentCount = 2,
-        -- Min: 1 Max: 10 Default: 5
-        WaterPlantElectricalSkill = 5,
-        -- Min: 1 Max: 10 Default: 5
-        WaterPlantMetalworkSkill = 5,
-        -- Min: 0.25 Max: 4.00 Default: 1.00
-        DegradationRate = 1.0,
-        RandomBreakdownEnabled = true,
-        BreakdownWarningEnabled = true,
-        ZombieAttractionEnabled = true,
-        -- Min: 0.00 Max: 3.00 Default: 1.00
-        ZombieAttractionMultiplier = 1.0,
-        -- Min: 25 Max: 200 Default: 100
-        RepairNoiseRadius = 100,
-        -- Min: 50 Max: 300 Default: 150
-        StartupNoiseRadius = 150,
-        -- Min: 0.50 Max: 2.00 Default: 1.00
-        PartRequirementMultiplier = 1.0,
-        RequireTools = true,
-        ToolsConsumed = true,
-        -- Min: 0.25 Max: 4.00 Default: 1.00
-        GeneratorFuelConsumption = 1.0,
-        GeneratorAutoConnect = true,
-        SpriteGeneratorVirtualOnly = true,
-        WaterTankRequiresPower = false,
-        ManualPumpEnabled = true,
-        RequirePrerequisite = true,
-        LouisvillePlantEnabled = true,
-        DebugMode = false,
-        ShowMapOverlay = true,
-        RequirePowerOff = true,
-        IBCompatMode = true,
-    },
     StartingInjuriesMod = {
         EnableBlackoutExplosions = true,
         EnableBandageAssistance = false,
@@ -1805,37 +1736,6 @@ SandboxVars = {
         RemoveVanillaWeaponParts = false,
         InsertGunsToOutfits = false,
     },
-    PZTrueMusicSandbox = {
-        SpawnTrueMoozicVan = true,
-        -- Min: 0 Max: 100 Default: 5
-        SkypeRingChance = 5,
-        -- Min: 1 Max: 365 Default: 47
-        SkypeRingCooldownDays = 47,
-        -- Min: 0 Max: 100000 Default: 100
-        CassetteSpawnRate = 100,
-        -- Min: 0 Max: 100000 Default: 100
-        CassetteCaseSpawnRate = 100,
-        -- Min: 0 Max: 100000 Default: 100
-        VinylSpawn = 100,
-        -- Min: 0 Max: 100000 Default: 100
-        VinylPlayerSpawn = 100,
-        -- Min: 0 Max: 100000 Default: 100
-        WalkmanSpawn = 100,
-        -- Min: 0 Max: 100000 Default: 100
-        BoomboxSpawn = 100,
-        -- Min: 0 Max: 100000 Default: 100
-        ZombieWalkmanSpawnRate = 100,
-        StartWithDevice = 1,
-        -- Min: 600 Max: 172800 Default: 2100
-        MusicPlaybackTimeoutSeconds = 2100,
-        -- Min: 1 Max: 50 Default: 5
-        MusicTimer = 5,
-        EnableDisassembly = true,
-        TMSpeakerDebug = false,
-        AudioSilenceDebug = false,
-        SkypeRingDebugAlwaysFire = false,
-        SkypeRingEnabled = true,
-    },
     AsKillboardTable = {
         -- Min: 3 Max: 100 Default: 30
         PlayersPerPage = 30,
@@ -1854,35 +1754,6 @@ SandboxVars = {
         EnablePvPTracking = false,
         ShowPVP = false,
         ShowTimeSurvived = true,
-    },
-    JaxeRevival = {
-        -- Min: 5 Max: 80 Default: 25
-        IncapacitatedHealth = 25,
-        -- Min: 0 Max: 240 Default: 6
-        IncapacitatedTime = 3,
-        -- Min: 0 Max: 600 Default: 0
-        IncapacitatedTimeVariance = 0,
-        ShowExactCountdown = true,
-        -- Min: 100 Max: 3000 Default: 1200
-        AssistedRecoveryTicks = 1200,
-        UnassistedRecovery = false,
-        RecoveryRequiresPassive = false,
-        -- Min: 5 Max: 100 Default: 50
-        RecoveryHealth = 30,
-        RecoveryRemovesInjuries = false,
-        -- Min: 0 Max: 100 Default: 30
-        PassiveSkillLoss = 0,
-        -- Min: 0 Max: 100 Default: 20
-        AgilitySkillLoss = 0,
-        -- Min: 0 Max: 100 Default: 10
-        WeaponSkillLoss = 0,
-        -- Min: 0 Max: 100 Default: 0
-        OtherSkillLoss = 0,
-        -- Min: 0 Max: 10 Default: 0
-        FirstAidRequired = 0,
-        ProfessionRequired = 1,
-        ReviveBandaged = 1,
-        DragDownAllowed = false,
     },
     AVCS = {
         AllowFaction = true,
@@ -1951,6 +1822,8 @@ SandboxVars = {
         ExpansionRoleStepTiles = 5,
         -- Min: 0 Max: 20000 Default: 600
         ExpansionRoleMaxExtraTilesFromOriginal = 600,
+        -- Min: 0 Max: 100000 Default: 0
+        ExpansionMaxTotalTiles = 0,
         ExpansionUserBorderExpansionEnabled = false,
         -- Min: 0 Max: 200 Default: 1
         ExpansionUserMaxBorderTilesFromOriginal = 1,
