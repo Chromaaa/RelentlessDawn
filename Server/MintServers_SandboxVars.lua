@@ -747,7 +747,7 @@ SandboxVars = {
     -- A multiplier for the distance at which zombies can hear gunshots. Min: 0.20 Max: 2.00 Default: 1.00
     FirearmNoiseMultiplier = 1.0,
     -- Multiplier for firearm jamming chance. 0 disables jamming. Min: 0.00 Max: 10.00 Default: 1.00
-    FirearmJamMultiplier = 1.0,
+    FirearmJamMultiplier = 0.1,
     -- Multiplier for Moodle effects on hit chance. 0 disables Moodle penalty. Min: 0.00 Max: 10.00 Default: 1.00
     FirearmMoodleMultiplier = 1.0,
     -- Multiplier for the effects of weather (wind, rain and fog) on hit chance. 0 disables weather effect. Min: 0.00 Max: 10.00 Default: 1.00
@@ -983,7 +983,7 @@ SandboxVars = {
     },
     MultiplierConfig = {
         -- The rate at which all skills level up. Min: 0.00 Max: 1000.00 Default: 1.00
-        Global = 2.0,
+        Global = 6.0,
         -- When enabled, all skills will use the Global Multiplier.
         GlobalToggle = true,
         -- Rate at which Fitness skill levels up. Min: 0.00 Max: 1000.00 Default: 1.00
@@ -1067,37 +1067,14 @@ SandboxVars = {
         -- Min: 0.00 Max: 1000.00 Default: 1.00
         Music = 1.0,
     },
-    SkillRecoveryJournal = {
-        -- Min: 1 Max: 100 Default: 100
-        RecoveryPercentage = 80,
-        -- Min: 0.00 Max: 1000.00 Default: 1.00
-        TranscribeSpeed = 20.0,
-        -- Min: 0.00 Max: 1000.00 Default: 1.00
-        ReadTimeSpeed = 20.0,
-        RecoverProfessionAndTraitsBonuses = false,
-        TranscribeTVXP = true,
-        -- Min: -1 Max: 100 Default: 0
-        RecoverPassiveSkills = 80,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverPhysicalCategorySkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverCombatSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverFirearmSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverCraftingSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverSurvivalistSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        RecoverFarmingCategorySkills = -1,
-        -- Min: -1 Max: 100 Default: 0
-        KillsTrack = 0,
-        RecoverRecipes = true,
-        RecoveryJournalUsed = false,
-        SecurityFeatures = 1,
-        CraftRecipeNeedLearn = false,
-        CraftRecipe = "",
-        ModDataTrack = "",
+    RVAddon = {
+        CustomNormalVehicles = "",
+        CustomBusVehicles = "",
+        CustomSmallVehicles = "",
+        Custom3x2Caravan = "",
+        Custom3x6Caravan = "",
+        Custom3x7Empty = "",
+        Custom4x12colossal = "",
     },
     PlayerConnectionMessage = {
         disableDeathMessage = false,
@@ -1120,104 +1097,13 @@ SandboxVars = {
     },
     DAMN = {
         AllowPro440Spawns = true,
-        AllowMrBusSpawns = true,
-        AllowChonkerSpawns = true,
-        AllowCashcowSpawns = true,
-        AllowMcBoxySpawns = true,
-    },
-    BuildableFuelPump = {
-        -- Min: 0 Max: 10 Default: 5
-        MetalWeldingSkillRequired = 5,
-        -- Min: 0 Max: 10 Default: 2
-        MechanicsSkillRequired = 2,
-        -- Min: 1 Max: 20 Default: 4
-        BlowTorchUseCost = 4,
-        -- Min: 1 Max: 20 Default: 4
-        WeldingRodsUseCost = 4,
-        -- Min: 0 Max: 10 Default: 2
-        TirePumpAmount = 2,
-        -- Min: 0 Max: 40 Default: 8
-        MetalPipeAmount = 8,
-        -- Min: 0 Max: 20 Default: 8
-        SheetMetalAmount = 8,
-        -- Min: 0 Max: 200 Default: 60
-        ScrewsAmount = 60,
-        -- Min: 0 Max: 50 Default: 10
-        ScrapMetalAmount = 10,
-        -- Min: 0 Max: 20 Default: 4
-        MetalBarAmount = 4,
-        -- Min: 0 Max: 30 Default: 12
-        SmallSheetMetalAmount = 12,
+        AllowDemonChildSpawns = false,
     },
     HB = {
         PermanentCasings = true,
         -- Min: 0 Max: 5 Default: 0
         MultiplayerTick = 0,
         CustomIcons = true,
-    },
-    GWG = {
-        -- Min: 0 Max: 5 Default: 0
-        MultiplayerTick = 0,
-    },
-    MarzGuns = {
-        Enable_Alternative_Ammos = true,
-        Enable_M16A1 = true,
-        Enable_M16A2 = true,
-        Enable_M16A2_M203 = true,
-        Enable_M16A3 = true,
-        Enable_AR15 = true,
-        Enable_FNC = true,
-        Enable_M4 = true,
-        Enable_G36C = true,
-        Enable_AK74 = true,
-        Enable_AKS74U = true,
-        Enable_ASVAL = true,
-        Enable_FAMAS = true,
-        Enable_CAR15 = true,
-        Enable_XM177 = true,
-        Enable_M4A1 = true,
-        Enable_AK47 = true,
-        Enable_M14 = true,
-        Enable_M1_GARAND = true,
-        Enable_FAL = true,
-        Enable_G3 = true,
-        Enable_MOSIN = true,
-        Enable_M24 = true,
-        Enable_M79 = true,
-        Enable_W1894 = true,
-        Enable_M1895 = true,
-        Enable_W1887 = true,
-        Enable_W1873 = true,
-        Enable_W1873_CARBINE = true,
-        Enable_M60 = true,
-        Enable_BAR = true,
-        Enable_M92FS = true,
-        Enable_M93R = true,
-        Enable_P226 = true,
-        Enable_HIPOWER = true,
-        Enable_M1911 = true,
-        Enable_USP = true,
-        Enable_DEAGLE = true,
-        Enable_SW629 = true,
-        Enable_PYTHON = true,
-        Enable_RHINO = true,
-        Enable_MP412 = true,
-        Enable_COLT_SINGLE = true,
-        Enable_SVD = true,
-        Enable_SKS = true,
-        Enable_PSG1 = true,
-        Enable_MOSSBERG_590 = true,
-        Enable_TRENCHGUN = true,
-        Enable_BENELLI_M4 = true,
-        Enable_SPAS12 = true,
-        Enable_STEVENS_555 = true,
-        Enable_DOUBLEBARREL = true,
-        Enable_AA12 = true,
-        Enable_REMINGTON_870 = true,
-        Enable_THOMPSON = true,
-        Enable_MP5 = true,
-        Enable_MP5K = true,
-        Enable_TEC9 = true,
     },
     SpareEnginePartsCrafting = {
         -- Min: 1 Max: 40 Default: 20
@@ -1228,12 +1114,6 @@ SandboxVars = {
         EnginePartsOutputElec = 20,
         -- Min: 1 Max: 40 Default: 20
         EnginePartsOutputSmit = 20,
-    },
-    ChevalDeFrise = {
-        -- Min: 1 Max: 99999 Default: 200
-        WoodBaseHealth = 200,
-        -- Min: 1 Max: 99999 Default: 1000
-        MetalBaseHealth = 1000,
     },
     ProximityInventory = {
         ZombieOnly = false,
@@ -1249,42 +1129,6 @@ SandboxVars = {
         WoundDirtynessMultiplier = 1,
         -- Min: 1 Max: 3 Default: 2
         SurgeonAbilityImportance = 2,
-    },
-    UsefulBarrels = {
-        DebugMode = false,
-        -- Min: 1 Max: 9999 Default: 400
-        BarrelCapacity = 400,
-        RequirePipeWrench = true,
-        RequireHoseForTake = true,
-        RequireFunnelForFill = false,
-        -- Min: 1.00 Max: 2.00 Default: 1.25
-        FunnelSpeedUpFillModifier = 1.25,
-        AllowIndustrial = true,
-        AllowFuel = true,
-        AllowHazardous = true,
-        AllowWater = true,
-        AllowAlcoholic = true,
-        AllowBeverage = true,
-        AllowMedical = false,
-        AllowColors = false,
-        AllowDyes = false,
-        AllowHairDyes = false,
-        AllowPaint = true,
-        AllowPoisons = false,
-        EnableGeneratorRefuel = true,
-        GeneratorRefuelRequiresHose = true,
-        EnableCarRefuel = true,
-        CarRefuelRequiresHose = true,
-        EnableFillBarrelFromVehicles = true,
-        FillBarrelFromVehiclesRequiresHose = true,
-        InitialFluid = true,
-        InitialFluidPool = "Acid Water TaintedWater Petrol Petrol Bleach PotentPoison",
-        -- Min: 0 Max: 9999 Default: 54
-        InitialFluidMaxAmount = 54,
-        -- Min: 0.00 Max: 100.00 Default: 25.00
-        InitialFluidSpawnChance = 25.0,
-        RequireWeldingMask = true,
-        RequireBlowTorch = true,
     },
     Text = {
         DividerMusicNew = true,
@@ -1356,6 +1200,8 @@ SandboxVars = {
         CleaningLitterChance = 3,
     },
     LSArt = {
+        -- Min: 0.10 Max: 3.00 Default: 1.00
+        GeneralBeautyMultiplier = 1.0,
         BeautyOutdoors = false,
         BeautyShowNegative = false,
         BeautyNeedDecayRate = 3,
@@ -1501,189 +1347,9 @@ SandboxVars = {
         ScannerCraftSkillReq = 4,
         ScanAwardsXP = true,
     },
-    JeevesIntegration = {
-        -- Min: 0 Max: 11 Default: 1
-        Auto_10Min = 1,
-        -- Min: 0 Max: 11 Default: 2
-        Auto_5Min = 2,
-        -- Min: 0 Max: 11 Default: 3
-        Auto_1Min = 3,
-        -- Min: 0 Max: 11 Default: 4
-        Auto_10Sec = 4,
-        -- Min: 0 Max: 11 Default: 1
-        Mod_10Min = 1,
-        -- Min: 0 Max: 11 Default: 2
-        Mod_5Min = 2,
-        -- Min: 0 Max: 11 Default: 3
-        Mod_1Min = 3,
-        -- Min: 0 Max: 11 Default: 4
-        Mod_10Sec = 4,
-        -- Min: 1 Max: 27 Default: 5
-        RankColor_1 = 5,
-        -- Min: 1 Max: 27 Default: 9
-        RankColor_2 = 9,
-        -- Min: 1 Max: 27 Default: 11
-        RankColor_3 = 11,
-        -- Min: 1 Max: 27 Default: 3
-        RankColor_4 = 3,
-        -- Min: 1 Max: 27 Default: 7
-        RankColor_5 = 7,
-        -- Min: 1 Max: 27 Default: 1
-        RankColor_6 = 1,
-    },
-    JeevesDrops = {
-        AutoDrops = true,
-        -- Min: 1 Max: 90 Default: 2
-        FrequencyDayMin = 3,
-        -- Min: 1 Max: 90 Default: 5
-        FrequencyDayMax = 6,
-        -- Min: 20 Max: 90 Default: 50
-        DropRadiusMin = 50,
-        -- Min: 30 Max: 90 Default: 60
-        DropRadiusMax = 60,
-        -- Min: 0 Max: 200 Default: 40
-        ZombieCount = 140,
-        -- Min: 10 Max: 90 Default: 40
-        ZombieRadiusMin = 10,
-        -- Min: 10 Max: 90 Default: 60
-        ZombieRadiusMax = 40,
-        -- Min: 50 Max: 1000 Default: 400
-        MarkerRange = 800,
-        -- Min: 1 Max: 168 Default: 6
-        DespawnHours = 6,
-        CrateMilitary = true,
-        CrateMedical = true,
-        CrateMaterials = true,
-        CrateFoodDrink = true,
-        CrateToolsMelee = true,
-        -- Min: 0 Max: 10 Default: 2
-        MIL_FirearmPicks = 10,
-        -- Min: 0 Max: 10 Default: 3
-        MIL_AmmoPicks = 10,
-        -- Min: 1 Max: 20 Default: 4
-        MIL_AmmoQty = 10,
-        -- Min: 0 Max: 10 Default: 2
-        MIL_GearPicks = 10,
-        -- Min: 0 Max: 10 Default: 4
-        MED_MedsPicks = 10,
-        -- Min: 1 Max: 20 Default: 3
-        MED_MedsQty = 10,
-        -- Min: 0 Max: 10 Default: 3
-        MED_SupplyPicks = 10,
-        -- Min: 1 Max: 20 Default: 4
-        MED_SupplyQty = 10,
-        -- Min: 0 Max: 10 Default: 4
-        MAT_BuildPicks = 10,
-        -- Min: 1 Max: 20 Default: 5
-        MAT_BuildQty = 10,
-        -- Min: 0 Max: 10 Default: 3
-        MAT_HardwarePicks = 10,
-        -- Min: 1 Max: 20 Default: 4
-        MAT_HardwareQty = 20,
-        -- Min: 0 Max: 10 Default: 5
-        FD_FoodPicks = 10,
-        -- Min: 1 Max: 20 Default: 3
-        FD_FoodQty = 10,
-        -- Min: 0 Max: 10 Default: 3
-        FD_DrinkPicks = 10,
-        -- Min: 1 Max: 20 Default: 3
-        FD_DrinkQty = 10,
-        FD_PerishablesEnabled = false,
-        -- Min: 0 Max: 10 Default: 2
-        FD_PerishablePicks = 10,
-        -- Min: 1 Max: 20 Default: 1
-        FD_PerishableQty = 10,
-        -- Min: 0 Max: 10 Default: 3
-        TM_ToolPicks = 10,
-        -- Min: 0 Max: 10 Default: 2
-        TM_MeleePicks = 10,
-        RadioEnabled = true,
-        -- Min: 1 Max: 100 Default: 10
-        RadioSpawnRate = 10,
-        SE_Enabled = true,
-        -- Min: 1 Max: 365 Default: 14
-        SE_StartDay = 14,
-        -- Min: 1 Max: 90 Default: 7
-        SE_FrequencyDayMin = 3,
-        -- Min: 1 Max: 90 Default: 14
-        SE_FrequencyDayMax = 6,
-        -- Min: 1 Max: 168 Default: 24
-        SE_DespawnHours = 24,
-        -- Min: 1 Max: 10 Default: 2
-        SE_LootMultiplier = 3,
-        -- Min: 0 Max: 500 Default: 200
-        SE_ZombieCount = 350,
-        -- Min: 10 Max: 90 Default: 30
-        SE_ZombieRadiusMin = 10,
-        -- Min: 10 Max: 90 Default: 80
-        SE_ZombieRadiusMax = 30,
-        -- Min: 10 Max: 180 Default: 60
-        SE_SpawnDuration = 60,
-        -- Min: 10 Max: 180 Default: 60
-        SE_LureDuration = 120,
-        -- Min: 50 Max: 500 Default: 300
-        SE_LureRadius = 300,
-        -- Min: 100 Max: 2000 Default: 1000
-        SE_MoodleRange = 2000,
-        -- Min: 30 Max: 300 Default: 100
-        SE_AlarmRadius = 300,
-    },
-    JeevesHordes = {
-        Enabled = true,
-        -- Min: 0 Max: 365 Default: 7
-        StartDay = 7,
-        -- Min: 1 Max: 365 Default: 7
-        FrequencyMin = 7,
-        -- Min: 1 Max: 365 Default: 12
-        FrequencyMax = 12,
-        -- Min: 1 Max: 5000 Default: 50
-        ZombieCount = 100,
-        -- Min: 0 Max: 500 Default: 10
-        ZombieIncrement = 10,
-        -- Min: 1 Max: 5000 Default: 300
-        ZombieCountMax = 200,
-        -- Min: 20 Max: 200 Default: 40
-        SpawnDistanceMin = 40,
-        -- Min: 30 Max: 250 Default: 70
-        SpawnDistanceMax = 70,
-        -- Min: 5 Max: 100 Default: 20
-        SafeRadius = 20,
-        -- Min: 0 Max: 1000 Default: 200
-        LureRadius = 200,
-        -- Min: 0 Max: 100 Default: 10
-        LureVolume = 10,
-        -- Min: 30 Max: 600 Default: 90
-        LureIntervalTicks = 90,
-        WarnPlayers = true,
-        PreventSleep = true,
-        -- Min: 0.10 Max: 15.00 Default: 15.00
-        SurvivorMultiplierMax = 15.0,
-        -- Min: 0 Max: 100 Default: 5
-        RottenFleshChance = 5,
-        HordeImmunityEnabled = true,
-        FragranceEnabled = true,
-        -- Min: 1 Max: 100 Default: 10
-        FragranceSpawnRate = 10,
-    },
     StartingInjuriesMod = {
         EnableBlackoutExplosions = true,
         EnableBandageAssistance = false,
-    },
-    EnergyRoutingSystem = {
-        LootSpawnMultiplier = 4,
-        CableSpawnAmount = 1,
-        -- Min: 0 Max: 500 Default: 75
-        DismantleElectricityXPBase = 75,
-        -- Min: 1 Max: 24 Default: 6
-        ConsumerScanIntervalHours = 6,
-        -- Min: 0 Max: 4 Default: 2
-        ControllerVerticalRange = 2,
-        EconomicMode = false,
-        -- Min: 0 Max: 10000 Default: 300
-        EconomicModeMinimumWatts = 300,
-        -- Min: 1 Max: 50 Default: 20
-        EconomicModeRadius = 20,
-        DebugLogs = false,
     },
     KnoxAntidote = {
         AntidoteRarity = 3,
@@ -1730,12 +1396,6 @@ SandboxVars = {
         MilSpawnMultiplier = 1.0,
         AdminOnlyMoveUp = false,
     },
-    PSA = {
-        RemoveVanillaFirearms = false,
-        RemoveVanillaAmmo = false,
-        RemoveVanillaWeaponParts = false,
-        InsertGunsToOutfits = false,
-    },
     AsKillboardTable = {
         -- Min: 3 Max: 100 Default: 30
         PlayersPerPage = 30,
@@ -1755,21 +1415,6 @@ SandboxVars = {
         ShowPVP = false,
         ShowTimeSurvived = true,
     },
-    AVCS = {
-        AllowFaction = true,
-        AllowSafehouse = true,
-        -- Min: 1 Max: 999 Default: 5
-        MaxVehicle = 10,
-        RequireTicket = true,
-        ReturnTicket = true,
-        ServerSideChecking = false,
-        -- Min: 1 Max: 999 Default: 240
-        ClaimTimeout = 240,
-        TrunkParts = "TrunkDoor;DoorRear",
-        RebuildDB = false,
-        -- Min: 1 Max: 60 Default: 1
-        VehicleCoordinateUpdateThrottle = 1,
-    },
     FunctionalAppliances = {
         BeerKegsChance = 3,
         BeerKegsFilledAmount = 3,
@@ -1778,19 +1423,6 @@ SandboxVars = {
         FATheatreChance = 3,
         FAFreshTheatreChance = 3,
         FAZombieItemsSpawn = true,
-    },
-    AutomaticRefueling = {
-        -- Min: 1 Max: 100 Default: 10
-        LitersPerMinute = 10,
-        -- Min: 1 Max: 50 Default: 5
-        MaxDistance = 5,
-        RemoveOriginalOptions = true,
-        CanPumpBeDamaged = true,
-        CanPumpBeRepaired = true,
-        -- Min: 1 Max: 60 Default: 5
-        PumpRepairDuration = 5,
-        -- Min: 0 Max: 200 Default: 20
-        PumpSoundRadius = 20,
     },
     BetterSafehouse = {
         EnableSafehouseViewer = true,
@@ -1830,11 +1462,152 @@ SandboxVars = {
         ExpansionBlockRoadTiles = false,
         ExpansionBlockedRoadTileNames = "\"blends_street_01_85",
     },
-    TVM = {
-        MachineStrength = 2,
-        PlayerDamage = false,
-        RequiresPower = true,
-        -- Min: 0.02 Max: 1000.00 Default: 48.00
-        DrainRate = 48.0,
+    EBFChainsaw = {
+        EnableFarmSpawns = true,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        FarmManual = 0.02,
+        -- Min: 0.00 Max: 100.00 Default: 0.05
+        FarmChainsaw = 0.05,
+        -- Min: 0.00 Max: 100.00 Default: 0.05
+        FarmNewChain = 0.05,
+        -- Min: 0.00 Max: 100.00 Default: 0.20
+        FarmWornChain = 0.2,
+        -- Min: 0.00 Max: 100.00 Default: 0.50
+        FarmBrokenChain = 0.5,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        FarmChainLink = 0.02,
+        -- Min: 0.00 Max: 100.00 Default: 0.05
+        FarmHeavyChain = 0.05,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        FarmHeavyChainHook = 0.01,
+        EnableStoreSpawns = true,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        StoreManual = 0.01,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        StoreChainsaw = 0.01,
+        -- Min: 0.00 Max: 100.00 Default: 0.04
+        StoreNewChain = 0.04,
+        -- Min: 0.00 Max: 100.00 Default: 0.03
+        StoreWornChain = 0.03,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        StoreBrokenChain = 0.02,
+        -- Min: 0.00 Max: 100.00 Default: 0.03
+        StoreChainLink = 0.03,
+        -- Min: 0.00 Max: 100.00 Default: 0.04
+        StoreHeavyChain = 0.04,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        StoreHeavyChainHook = 0.02,
+        EnableResidentialSpawns = true,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        ResidentialManual = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        ResidentialChainsaw = 0.005,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        ResidentialNewChain = 0.005,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        ResidentialWornChain = 0.01,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        ResidentialBrokenChain = 0.02,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        ResidentialChainLink = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        ResidentialHeavyChain = 0.005,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        ResidentialHeavyChainHook = 0.0,
+        EnableGarageSpawns = true,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        GarageManual = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        GarageChainsaw = 0.01,
+        -- Min: 0.00 Max: 100.00 Default: 0.04
+        GarageNewChain = 0.04,
+        -- Min: 0.00 Max: 100.00 Default: 0.03
+        GarageWornChain = 0.03,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        GarageBrokenChain = 0.02,
+        -- Min: 0.00 Max: 100.00 Default: 0.03
+        GarageChainLink = 0.03,
+        -- Min: 0.00 Max: 100.00 Default: 0.04
+        GarageHeavyChain = 0.04,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        GarageHeavyChainHook = 0.01,
+        EnableBusinessSpawns = true,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        BusinessManual = 0.01,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        BusinessChainsaw = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        BusinessNewChain = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        BusinessWornChain = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        BusinessBrokenChain = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        BusinessChainLink = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        BusinessHeavyChain = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        BusinessHeavyChainHook = 0.0,
+        EnableIndustrialSpawns = true,
+        -- Min: 0.00 Max: 100.00 Default: 0.00
+        IndustrialManual = 0.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        IndustrialChainsaw = 0.02,
+        -- Min: 0.00 Max: 100.00 Default: 0.04
+        IndustrialNewChain = 0.04,
+        -- Min: 0.00 Max: 100.00 Default: 0.04
+        IndustrialWornChain = 0.04,
+        -- Min: 0.00 Max: 100.00 Default: 0.03
+        IndustrialBrokenChain = 0.03,
+        -- Min: 0.00 Max: 100.00 Default: 0.05
+        IndustrialChainLink = 0.05,
+        -- Min: 0.00 Max: 100.00 Default: 0.05
+        IndustrialHeavyChain = 0.05,
+        -- Min: 0.00 Max: 100.00 Default: 0.03
+        IndustrialHeavyChainHook = 0.03,
+        EnableHuntingStoreSpawns = true,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        HuntingStoreManual = 0.01,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        HuntingStoreChainsaw = 0.02,
+        -- Min: 0.00 Max: 100.00 Default: 0.04
+        HuntingStoreNewChain = 0.04,
+        -- Min: 0.00 Max: 100.00 Default: 0.03
+        HuntingStoreWornChain = 0.03,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        HuntingStoreBrokenChain = 0.02,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        HuntingStoreChainLink = 0.01,
+        -- Min: 0.00 Max: 100.00 Default: 0.02
+        HuntingStoreHeavyChain = 0.02,
+        -- Min: 0.00 Max: 100.00 Default: 0.01
+        HuntingStoreHeavyChainHook = 0.01,
+        -- Min: 51.00 Max: 100.00 Default: 100.00
+        NewChainCondition = 100.0,
+        -- Min: 1.00 Max: 50.00 Default: 50.00
+        WornChainCondition = 50.0,
+        EnableChainIdleWear = true,
+        -- Min: 0.00 Max: 100.00 Default: 0.80
+        ChainTreeWear = 0.8,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        ZombieHitChainWear = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.25
+        FuelConsumption = 0.25,
+        -- Min: 0.00 Max: 1000.00 Default: 35.00
+        TreeDamageNewChain = 35.0,
+        -- Min: 0.00 Max: 1000.00 Default: 30.00
+        TreeDamageWornChain = 30.0,
+        -- Min: 0.00 Max: 100.00 Default: 0.60
+        CombatDamageNoChain = 0.6,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        CombatDamageWithChain = 1.0,
+        -- Min: 0.00 Max: 100.00 Default: 2.00
+        CombatDamageRunning = 2.0,
+    },
+    PSA = {
+        RemoveVanillaFirearms = false,
+        RemoveVanillaAmmo = false,
+        RemoveVanillaWeaponParts = false,
+        InsertGunsToOutfits = false,
     },
 }
