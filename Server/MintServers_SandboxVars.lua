@@ -211,7 +211,7 @@ SandboxVars = {
     -- 4 = Rainy
     -- 5 = Very Rainy
     Rain = 3,
-    -- Number of days until the erosion system (which adds vines, long grass, new trees etc. to the world) will reach 100%% growth. Default = Slow (200 Days)
+    -- Number of days until the erosion system (which adds vines, long grass, new trees etc. to the world) will reach 100% growth. Default = Slow (200 Days)
     -- 1 = Very Fast (20 Days)
     -- 2 = Fast (50 Days)
     -- 3 = Normal (100 Days)
@@ -514,7 +514,7 @@ SandboxVars = {
     -- 6 = Very Often
     LockedCar = 4,
     -- How gas-hungry vehicles are. Min: 0.00 Max: 100.00 Default: 1.00
-    CarGasConsumption = 5.0,
+    CarGasConsumption = 3.0,
     -- General condition discovered vehicles will be in. Default = Normal
     -- 1 = Very Low
     -- 2 = Low
@@ -528,7 +528,7 @@ SandboxVars = {
     -- 3 = Normal
     -- 4 = High
     -- 5 = Very High
-    CarDamageOnImpact = 1,
+    CarDamageOnImpact = 3,
     -- Damage received by the player from being crashed into. Default = None
     -- 1 = None
     -- 2 = Low
@@ -631,7 +631,7 @@ SandboxVars = {
     AnimalGrassRegrowTime = 240,
     -- If a meta (ie. not actually visible in-game) fox may attack  your chickens if the hutch's door is left open at night.
     AnimalMetaPredator = false,
-    -- If animals with a mating season will respect it.  Otherwise they can reproduce/lay eggs all year round.
+    -- If on, animals will only mate during their breeding season (if any).  Otherwise they can reproduce/lay eggs all year round.
     AnimalMatingSeason = false,
     -- How long before baby animals will hatch from eggs. Default = Normal
     -- 1 = Ultra Fast
@@ -797,11 +797,11 @@ SandboxVars = {
     BuildingHightScrapMetalConsumption = 2,
     -- Min: 0 Max: 100 Default: 0
     BuildingGlassWallWindowGlassPanelConsumption = 0,
+    -- Min: -1 Max: 100 Default: -1
+    BAM_Server_MinSuccessChance = -1,
     VRO_EnableEngineRebuild = true,
     VRO_UseVanillaFixingRecipes = false,
     VRO_EnableFullVehicleSalvaging = true,
-    -- Min: -1 Max: 100 Default: -1
-    BAM_Server_MinSuccessChance = -1,
     Basement = {
         -- How frequently basements spawn at random locations. Default = Sometimes
         -- 1 = Never
@@ -970,7 +970,7 @@ SandboxVars = {
         FollowSoundDistance = 100,
         -- The size of groups real zombies form when idle. 0 means zombies don't form groups. Groups don't form inside buildings or forest zones. Min: 0 Max: 1000 Default: 20
         RallyGroupSize = 20,
-        -- The amount, as a percentage, that zombie groups can vary in size from the default (both larger and smaller).   For example, at 50%% variance with a default group size of 20, groups will vary in size from 10-30. Min: 0 Max: 100 Default: 50
+        -- The amount, as a percentage, that zombie groups can vary in size from the default (both larger and smaller).   For example, at 50% variance with a default group size of 20, groups will vary in size from 10-30. Min: 0 Max: 100 Default: 50
         RallyGroupSizeVariance = 50,
         -- The distance real zombies travel to form groups when idle. Min: 5 Max: 50 Default: 20
         RallyTravelDistance = 20,
@@ -983,7 +983,7 @@ SandboxVars = {
     },
     MultiplierConfig = {
         -- The rate at which all skills level up. Min: 0.00 Max: 1000.00 Default: 1.00
-        Global = 6.0,
+        Global = 2.0,
         -- When enabled, all skills will use the Global Multiplier.
         GlobalToggle = true,
         -- Rate at which Fitness skill levels up. Min: 0.00 Max: 1000.00 Default: 1.00
@@ -1056,345 +1056,60 @@ SandboxVars = {
         Butchering = 1.0,
         -- Rate at which Glassmaking skill levels up. Min: 0.00 Max: 1000.00 Default: 1.00
         Glassmaking = 1.0,
-        -- Min: 0.00 Max: 1000.00 Default: 1.00
-        Art = 1.0,
-        -- Min: 0.00 Max: 1000.00 Default: 1.00
-        Cleaning = 1.0,
-        -- Min: 0.00 Max: 1000.00 Default: 1.00
-        Dancing = 1.0,
-        -- Min: 0.00 Max: 1000.00 Default: 1.00
-        Meditation = 1.0,
-        -- Min: 0.00 Max: 1000.00 Default: 1.00
-        Music = 1.0,
     },
-    RVAddon = {
-        CustomNormalVehicles = "",
-        CustomBusVehicles = "",
-        CustomSmallVehicles = "",
-        Custom3x2Caravan = "",
-        Custom3x6Caravan = "",
-        Custom3x7Empty = "",
-        Custom4x12colossal = "",
+    SkillRecoveryJournal = {
+        -- Min: 1 Max: 100 Default: 100
+        RecoveryPercentage = 80,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        TranscribeSpeed = 5.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        ReadTimeSpeed = 5.0,
+        RecoverProfessionAndTraitsBonuses = false,
+        TranscribeTVXP = true,
+        -- Min: -1 Max: 100 Default: 0
+        RecoverPassiveSkills = 80,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverPhysicalCategorySkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverCombatSkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverFirearmSkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverCraftingSkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverSurvivalistSkills = -1,
+        -- Min: -1 Max: 100 Default: -1
+        RecoverFarmingCategorySkills = -1,
+        -- Min: -1 Max: 100 Default: 0
+        KillsTrack = 0,
+        RecoverRecipes = true,
+        RecoveryJournalUsed = false,
+        SecurityFeatures = 1,
+        CraftRecipeNeedLearn = false,
+        CraftRecipe = "",
+        ModDataTrack = "",
+    },
+    ProximityInventory = {
+        ZombieOnly = false,
     },
     PlayerConnectionMessage = {
-        disableDeathMessage = false,
+        disableDeathMessage = true,
         disableKillMessage = true,
         hideAdmin = false,
         hideModerator = false,
         hideStaff = false,
         -- Min: 0.00 Max: 1.00 Default: 0.00
-        connectedMessageColorRed = 0.7,
+        connectedMessageColorRed = 0.0,
         -- Min: 0.00 Max: 1.00 Default: 0.70
-        connectedMessageColorGreen = 0.0,
+        connectedMessageColorGreen = 0.7,
         -- Min: 0.00 Max: 1.00 Default: 1.00
         connectedMessageColorBlue = 1.0,
         -- Min: 0.00 Max: 1.00 Default: 1.00
         disconnectedMessageColorRed = 1.0,
         -- Min: 0.00 Max: 1.00 Default: 0.30
-        disconnectedMessageColorGreen = 0.0,
+        disconnectedMessageColorGreen = 0.3,
         -- Min: 0.00 Max: 1.00 Default: 0.00
         disconnectedMessageColorBlue = 0.0,
-    },
-    DAMN = {
-        AllowPro440Spawns = true,
-        AllowDemonChildSpawns = false,
-    },
-    HB = {
-        PermanentCasings = true,
-        -- Min: 0 Max: 5 Default: 0
-        MultiplayerTick = 0,
-        CustomIcons = true,
-    },
-    SpareEnginePartsCrafting = {
-        -- Min: 1 Max: 40 Default: 20
-        EnginePartsOutputWeld = 20,
-        -- Min: 1 Max: 40 Default: 20
-        EnginePartsOutputMech = 20,
-        -- Min: 1 Max: 40 Default: 20
-        EnginePartsOutputElec = 20,
-        -- Min: 1 Max: 40 Default: 20
-        EnginePartsOutputSmit = 20,
-    },
-    ProximityInventory = {
-        ZombieOnly = false,
-    },
-    JordanalSpawns = {
-        -- Min: 0.00 Max: 100.00 Default: 0.04
-        MirrorUnitChance = 0.04,
-    },
-    TOC = {
-        -- Min: 1 Max: 10 Default: 1
-        CicatrizationSpeed = 5,
-        -- Min: 0 Max: 5 Default: 1
-        WoundDirtynessMultiplier = 1,
-        -- Min: 1 Max: 3 Default: 2
-        SurgeonAbilityImportance = 2,
-    },
-    Text = {
-        DividerMusicNew = true,
-        DividerDancingNew = true,
-        DividerMeditationNew = true,
-        DividerHygiene = true,
-        DividerArt = true,
-        LSDividerOther = false,
-        DividerDebug = false,
-    },
-    LSAmbt = {
-        Toggle = true,
-        -- Min: 1 Max: 1000 Default: 36
-        Cooldown = 36,
-        -- Min: 1 Max: 100 Default: 1
-        MaxInProgress = 1,
-        -- Min: 1 Max: 100 Default: 3
-        MaxTotal = 3,
-        ResetException = false,
-        HideTips = false,
-    },
-    Music = {
-        StrengthMultiplier = 2,
-        ListeningStrengthMultiplier = 2,
-        LearningChance = 3,
-        Metabolics = 1,
-    },
-    Dancing = {
-        StrengthMultiplier = 2,
-    },
-    Meditation = {
-        StrengthMultiplier = 2,
-        MindfulnessDuration = 2,
-        -- Min: 0.00 Max: 10.00 Default: 2.00
-        HealFactor = 2.0,
-        EffectMultiplier = 2,
-        KeepBags = false,
-    },
-    LSMeditation = {
-        RemoveLevitation = false,
-    },
-    Yoga = {
-        StrengthMultiplier = 2,
-        Exhaustion = 3,
-        Embarrassment = 2,
-        AidObjects = true,
-        RequiresMat = false,
-        KeepBags = false,
-        FailChance = 4,
-        -- Min: 0.10 Max: 5.00 Default: 1.00
-        YogaXPMultiplier = 2.0,
-        -- Min: 0.10 Max: 5.00 Default: 1.00
-        FitnessXPMultiplier = 2.0,
-        -- Min: 0.10 Max: 5.00 Default: 1.00
-        NimbleXPMultiplier = 2.0,
-    },
-    LSHygiene = {
-        -- Min: 0.00 Max: 3.00 Default: 1.00
-        HygieneNeedMultiplier = 1.0,
-        -- Min: 0.00 Max: 3.00 Default: 1.00
-        BladderNeedMultiplier = 0.0,
-        HygieneNeedExpectationTime = 2,
-        CleansMakeup = true,
-        NotEmbarrassed = false,
-        ColdSeverity = 2,
-        -- Min: 0.00 Max: 3.00 Default: 0.00
-        ColdChanceMultiplier = 0.0,
-        CleaningExpectationTime = 2,
-        CleaningLitterChance = 3,
-    },
-    LSArt = {
-        -- Min: 0.10 Max: 3.00 Default: 1.00
-        GeneralBeautyMultiplier = 1.0,
-        BeautyOutdoors = false,
-        BeautyShowNegative = false,
-        BeautyNeedDecayRate = 3,
-        BeautyNeedStrength = 3,
-        -- Min: 0.10 Max: 4.00 Default: 1.00
-        ArtworkBeautyMultiplier = 2.0,
-    },
-    LS = {
-        DynamicTraits = false,
-        DynamicTraitsReverse = 1,
-        DividerServer = false,
-        ModdataUpdate = 1,
-        MoodUpdate = 1,
-    },
-    LSComfort = {
-        -- Min: 0.00 Max: 3.00 Default: 1.00
-        ComfortNeedMultiplier = 1.0,
-        ComfortPositive = false,
-        ComfortNoImpact = false,
-    },
-    Debug = {
-        MoodlePriority = false,
-        Expressions = false,
-        DanceAnim = false,
-        LSVerbose = false,
-    },
-    JeevesPC = {
-        EnableGameDisks = true,
-        EnableTrainingDisks = true,
-        Skill_Aiming = true,
-        Skill_Reloading = true,
-        Skill_Axe = true,
-        Skill_LongBlade = true,
-        Skill_LongBlunt = true,
-        Skill_Maintenance = true,
-        Skill_ShortBlade = true,
-        Skill_ShortBlunt = true,
-        Skill_Spear = true,
-        Skill_Blacksmithing = true,
-        Skill_Carpentry = true,
-        Skill_Carving = true,
-        Skill_Cooking = true,
-        Skill_Electrical = true,
-        Skill_Glassmaking = true,
-        Skill_Knapping = true,
-        Skill_Masonry = true,
-        Skill_Mechanics = true,
-        Skill_Pottery = true,
-        Skill_Tailoring = true,
-        Skill_Welding = true,
-        Skill_Agriculture = true,
-        Skill_AnimalCare = true,
-        Skill_Butchering = true,
-        Skill_FirstAid = true,
-        Skill_Fishing = true,
-        Skill_Foraging = true,
-        Skill_Tracking = true,
-        Skill_Trapping = true,
-        -- Min: 0.00 Max: 20.00 Default: 0.50
-        GameDiskWeight = 0.5,
-        -- Min: 0.00 Max: 20.00 Default: 0.30
-        TrainingDiskWeight = 0.3,
-        -- Min: 0 Max: 10000 Default: 75
-        XP_Beginner = 75,
-        -- Min: 0 Max: 10000 Default: 150
-        XP_Intermediate = 150,
-        -- Min: 0 Max: 10000 Default: 300
-        XP_Advanced = 300,
-        -- Min: 0 Max: 10 Default: 5
-        MaxSkillLevel = 5,
-        -- Min: 0 Max: 50 Default: 5
-        BoredomReduction = 5,
-        -- Min: 0.00 Max: 5.00 Default: 1.00
-        HappinessMultiplier = 1.0,
-        -- Min: 0 Max: 100 Default: 10
-        Stage2XPBonus = 10,
-        -- Min: 0 Max: 100 Default: 20
-        Stage3XPBonus = 20,
-        EnableComponentLoot = true,
-        -- Min: 0.00 Max: 20.00 Default: 1.00
-        ComponentLootWeight = 1.0,
-        EnableDataDisks = true,
-        -- Min: 0.00 Max: 5.00 Default: 1.00
-        DataDiskSpawnChance = 1.0,
-        -- Min: 0.00 Max: 5.00 Default: 1.00
-        DataDiskXPMultiplier = 1.0,
-        DataDiskRecipeEnabled = true,
-        DataDiskTraitEnabled = true,
-        DataDiskVirusEnabled = true,
-        -- Min: 1 Max: 480 Default: 30
-        DataDiskVirusDowntime = 30,
-        DataDiskNegTraitEnabled = true,
-        -- Min: 0.00 Max: 3.00 Default: 1.00
-        DataDiskVirusChanceMult = 1.0,
-        -- Min: 0.00 Max: 3.00 Default: 1.00
-        DataDiskNegTraitChanceMult = 1.0,
-        -- Min: 0.00 Max: 10.00 Default: 1.00
-        ZombieDataDiskDropMult = 1.0,
-        EnablePersonalDisks = true,
-        -- Min: 0 Max: 100 Default: 100
-        PersonalDiskRecoveryPct = 100,
-        PersonalDiskRecoverRecipes = true,
-        -- Min: -1 Max: 100 Default: 0
-        PersonalDiskPassiveSkills = 0,
-        -- Min: -1 Max: 100 Default: -1
-        PersonalDiskCombatSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        PersonalDiskFirearmSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        PersonalDiskCraftingSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        PersonalDiskSurvivalistSkills = -1,
-        -- Min: -1 Max: 100 Default: -1
-        PersonalDiskFarmingSkills = -1,
-        PersonalDiskOneTimeUse = false,
-        PersonalDiskDeductRadioTVXP = false,
-        EnablePDA = true,
-        -- Min: 10 Max: 1440 Default: 120
-        PDABatteryLife = 120,
-        EnableHacking = true,
-        -- Min: 1 Max: 10 Default: 3
-        PDAHackMaxAttempts = 3,
-        -- Min: 1 Max: 30 Default: 5
-        PDAHackResetDays = 5,
-        -- Min: 5 Max: 75 Default: 25
-        PDAHackSuccessChance = 25,
-        -- Min: 0 Max: 50 Default: 15
-        PDAZombieRadius = 15,
-        -- Min: 0 Max: 100 Default: 50
-        HackAlarmChance = 50,
-        -- Min: 5 Max: 100 Default: 30
-        HackAlarmRadius = 30,
-        EnableBookScanner = true,
-        -- Min: 0.10 Max: 5.00 Default: 1.00
-        ScannerSpeedMult = 1.0,
-        -- Min: 0.10 Max: 5.00 Default: 1.00
-        DiskReadSpeedMult = 1.0,
-        -- Min: 0 Max: 300 Default: 100
-        DiskReadMultiplierPct = 100,
-        -- Min: 1.00 Max: 5.00 Default: 1.50
-        PDAReadTimePenalty = 1.5,
-        -- Min: 0 Max: 10 Default: 4
-        ScannerCraftSkillReq = 4,
-        ScanAwardsXP = true,
-    },
-    StartingInjuriesMod = {
-        EnableBlackoutExplosions = true,
-        EnableBandageAssistance = false,
-    },
-    KnoxAntidote = {
-        AntidoteRarity = 3,
-        AdminSpawnOnly = false,
-        SideEffectFatigue = true,
-        SideEffectNausea = true,
-        SideEffectDrunk = false,
-        -- Min: 0 Max: 10 Default: 0
-        RequiredFirstAidLevel = 0,
-    },
-    ProjectArcade = {
-        DisableDefaultPrizePool = false,
-        ReplaceVanillaArcadesOnLoad = false,
-        ReplaceVanillaPinballsOnLoad = false,
-        -- Min: 0 Max: 100 Default: 100
-        SfxVolumePct = 100,
-        DisableArcadeAmbientSound = false,
-        AnnouncementLanguage = 1,
-        CurrencyFullType = "Base.SilverCoin",
-        -- Min: 0 Max: 300 Default: 100
-        CoinDistContainersPct = 100,
-        -- Min: 0 Max: 300 Default: 100
-        CoinDistZombiesPct = 100,
-        -- Min: 0 Max: 300 Default: 100
-        ROMDistPct = 100,
-    },
-    JSling = {
-        EnableSlingLoot = true,
-        -- Min: 0.00 Max: 5.00 Default: 1.00
-        SlingLootMultiplier = 1.0,
-        EnableAccessoryLoot = true,
-        -- Min: 0.00 Max: 5.00 Default: 1.00
-        AccessoryLootMultiplier = 1.0,
-        EnableZombieSlings = true,
-        -- Min: 0 Max: 100 Default: 4
-        PoliceZombieSlingChance = 4,
-        -- Min: 0 Max: 100 Default: 8
-        MilitaryZombieSlingChance = 8,
-        -- Min: 0 Max: 100 Default: 2
-        MilitaryZombieFirearmChance = 2,
-    },
-    rSemiTruck = {
-        -- Min: 0.00 Max: 10.00 Default: 1.00
-        MilSpawnMultiplier = 1.0,
-        AdminOnlyMoveUp = false,
     },
     AsKillboardTable = {
         -- Min: 3 Max: 100 Default: 30
@@ -1406,23 +1121,14 @@ SandboxVars = {
         -- Min: 0 Max: 100 Default: 1
         MinKillsPVP = 1,
         -- Min: 0.00 Max: 8640.00 Default: 168.00
-        MinHoursSurvived = 24.0,
+        MinHoursSurvived = 168.0,
         PlayerTickRate = 1,
         ServerTickRate = 1,
         -- Min: -1 Max: 8640 Default: 24
         DeadDeleteInGmHours = 24,
-        EnablePvPTracking = false,
-        ShowPVP = false,
+        EnablePvPTracking = true,
+        ShowPVP = true,
         ShowTimeSurvived = true,
-    },
-    FunctionalAppliances = {
-        BeerKegsChance = 3,
-        BeerKegsFilledAmount = 3,
-        SyrupsChance = 3,
-        SyrupsFilledAmount = 3,
-        FATheatreChance = 3,
-        FAFreshTheatreChance = 3,
-        FAZombieItemsSpawn = true,
     },
     BetterSafehouse = {
         EnableSafehouseViewer = true,
@@ -1462,152 +1168,14 @@ SandboxVars = {
         ExpansionBlockRoadTiles = false,
         ExpansionBlockedRoadTileNames = "\"blends_street_01_85",
     },
-    EBFChainsaw = {
-        EnableFarmSpawns = true,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        FarmManual = 0.02,
-        -- Min: 0.00 Max: 100.00 Default: 0.05
-        FarmChainsaw = 0.05,
-        -- Min: 0.00 Max: 100.00 Default: 0.05
-        FarmNewChain = 0.05,
-        -- Min: 0.00 Max: 100.00 Default: 0.20
-        FarmWornChain = 0.2,
-        -- Min: 0.00 Max: 100.00 Default: 0.50
-        FarmBrokenChain = 0.5,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        FarmChainLink = 0.02,
-        -- Min: 0.00 Max: 100.00 Default: 0.05
-        FarmHeavyChain = 0.05,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        FarmHeavyChainHook = 0.01,
-        EnableStoreSpawns = true,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        StoreManual = 0.01,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        StoreChainsaw = 0.01,
-        -- Min: 0.00 Max: 100.00 Default: 0.04
-        StoreNewChain = 0.04,
-        -- Min: 0.00 Max: 100.00 Default: 0.03
-        StoreWornChain = 0.03,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        StoreBrokenChain = 0.02,
-        -- Min: 0.00 Max: 100.00 Default: 0.03
-        StoreChainLink = 0.03,
-        -- Min: 0.00 Max: 100.00 Default: 0.04
-        StoreHeavyChain = 0.04,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        StoreHeavyChainHook = 0.02,
-        EnableResidentialSpawns = true,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        ResidentialManual = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        ResidentialChainsaw = 0.005,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        ResidentialNewChain = 0.005,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        ResidentialWornChain = 0.01,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        ResidentialBrokenChain = 0.02,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        ResidentialChainLink = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        ResidentialHeavyChain = 0.005,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        ResidentialHeavyChainHook = 0.0,
-        EnableGarageSpawns = true,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        GarageManual = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        GarageChainsaw = 0.01,
-        -- Min: 0.00 Max: 100.00 Default: 0.04
-        GarageNewChain = 0.04,
-        -- Min: 0.00 Max: 100.00 Default: 0.03
-        GarageWornChain = 0.03,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        GarageBrokenChain = 0.02,
-        -- Min: 0.00 Max: 100.00 Default: 0.03
-        GarageChainLink = 0.03,
-        -- Min: 0.00 Max: 100.00 Default: 0.04
-        GarageHeavyChain = 0.04,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        GarageHeavyChainHook = 0.01,
-        EnableBusinessSpawns = true,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        BusinessManual = 0.01,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        BusinessChainsaw = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        BusinessNewChain = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        BusinessWornChain = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        BusinessBrokenChain = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        BusinessChainLink = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        BusinessHeavyChain = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        BusinessHeavyChainHook = 0.0,
-        EnableIndustrialSpawns = true,
-        -- Min: 0.00 Max: 100.00 Default: 0.00
-        IndustrialManual = 0.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        IndustrialChainsaw = 0.02,
-        -- Min: 0.00 Max: 100.00 Default: 0.04
-        IndustrialNewChain = 0.04,
-        -- Min: 0.00 Max: 100.00 Default: 0.04
-        IndustrialWornChain = 0.04,
-        -- Min: 0.00 Max: 100.00 Default: 0.03
-        IndustrialBrokenChain = 0.03,
-        -- Min: 0.00 Max: 100.00 Default: 0.05
-        IndustrialChainLink = 0.05,
-        -- Min: 0.00 Max: 100.00 Default: 0.05
-        IndustrialHeavyChain = 0.05,
-        -- Min: 0.00 Max: 100.00 Default: 0.03
-        IndustrialHeavyChainHook = 0.03,
-        EnableHuntingStoreSpawns = true,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        HuntingStoreManual = 0.01,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        HuntingStoreChainsaw = 0.02,
-        -- Min: 0.00 Max: 100.00 Default: 0.04
-        HuntingStoreNewChain = 0.04,
-        -- Min: 0.00 Max: 100.00 Default: 0.03
-        HuntingStoreWornChain = 0.03,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        HuntingStoreBrokenChain = 0.02,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        HuntingStoreChainLink = 0.01,
-        -- Min: 0.00 Max: 100.00 Default: 0.02
-        HuntingStoreHeavyChain = 0.02,
-        -- Min: 0.00 Max: 100.00 Default: 0.01
-        HuntingStoreHeavyChainHook = 0.01,
-        -- Min: 51.00 Max: 100.00 Default: 100.00
-        NewChainCondition = 100.0,
-        -- Min: 1.00 Max: 50.00 Default: 50.00
-        WornChainCondition = 50.0,
-        EnableChainIdleWear = true,
-        -- Min: 0.00 Max: 100.00 Default: 0.80
-        ChainTreeWear = 0.8,
-        -- Min: 0.00 Max: 100.00 Default: 1.00
-        ZombieHitChainWear = 1.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.25
-        FuelConsumption = 0.25,
-        -- Min: 0.00 Max: 1000.00 Default: 35.00
-        TreeDamageNewChain = 35.0,
-        -- Min: 0.00 Max: 1000.00 Default: 30.00
-        TreeDamageWornChain = 30.0,
-        -- Min: 0.00 Max: 100.00 Default: 0.60
-        CombatDamageNoChain = 0.6,
-        -- Min: 0.00 Max: 100.00 Default: 1.00
-        CombatDamageWithChain = 1.0,
-        -- Min: 0.00 Max: 100.00 Default: 2.00
-        CombatDamageRunning = 2.0,
-    },
-    PSA = {
-        RemoveVanillaFirearms = false,
-        RemoveVanillaAmmo = false,
-        RemoveVanillaWeaponParts = false,
-        InsertGunsToOutfits = false,
+    SpareEnginePartsCrafting = {
+        -- Min: 1 Max: 40 Default: 20
+        EnginePartsOutputWeld = 20,
+        -- Min: 1 Max: 40 Default: 20
+        EnginePartsOutputMech = 20,
+        -- Min: 1 Max: 40 Default: 20
+        EnginePartsOutputElec = 20,
+        -- Min: 1 Max: 40 Default: 20
+        EnginePartsOutputSmit = 20,
     },
 }
